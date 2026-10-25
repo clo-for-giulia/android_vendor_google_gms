@@ -26,7 +26,21 @@ PRODUCT_PACKAGES += \
     GmsSettingsProviderOverlay \
     GmsSystemUIOverlay \
     GmsTelecommOverlay \
-    GmsTelephonyOverlay
+    GmsTelephonyOverlay \
+    AOSPAPixelSetupWizardOverlay \
+    PixelDocumentsUIGoogleOverlay \
+    PixelDocumentsUIOverlay \
+    PixelFrameworksOverlay \
+    PixelSettingsOverlay \
+    PixelSetupWizardOverlay \
+    PixelSetupWizardOverlay2024 \
+    PixelSetupWizardOverlay2025 \
+    PixelSetupWizardOverlayExpressive \
+    PixelSetupWizardStringsOverlay \
+    PixelSystemUIOverlay
+
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/google/gms/overlay/static
+PRODUCT_PACKAGE_OVERLAYS += vendor/google/gms/overlay/static
 
 # Packages
 PRODUCT_PACKAGES += \
@@ -46,3 +60,17 @@ else
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
+
+# Default audio
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.config.alarm_alert=Fresh_morning.ogg \
+    ro.config.notification_sound=Kernel.ogg \
+    ro.config.ringtone=The_next_adventure.ogg
+
+# Sepolicy
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
+    vendor/google/gms/sepolicy/public
+
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    vendor/google/gms/sepolicy/private
+

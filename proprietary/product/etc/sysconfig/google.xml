@@ -31,6 +31,10 @@
     <bg-restriction-exemption package="com.google.android.setupwizard"/>
     <bg-restriction-exemption package="com.google.android.apps.setupwizard.searchselector"/>
 
+    <!-- Qualcomm Workload Classifier background service start exemption -->
+    <allow-in-power-save-except-idle package="com.qualcomm.qti.workloadclassifier" />
+    <bg-restriction-exemption package="com.qualcomm.qti.workloadclassifier" />
+
     <!-- These Google applications all handle URLs to their websites by default -->
 
     <!-- Apps below are required on all GMS devices -->
